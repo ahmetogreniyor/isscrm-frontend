@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ISSCRM Backend
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/isscrm
+    username: isscrm
+    password: isscrm_pass
+  jpa:
+    hibernate:
+      ddl-auto: update        # tablo yapısı otomatik güncellenir
+    show-sql: true            # SQL sorgularını konsolda gösterir
+    properties:
+      hibernate:
+        format_sql: true
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.isscrm.backend.worker.DeviceJobExecutor: DEBUG
+    com.isscrm.backend.service.DeviceJobService: DEBUG
+    org.hibernate.SQL: INFO
+  file:
+    name: logs/isscrm.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+
+# Scheduler properties (opsiyonel)
+scheduler:
+  enabled: true
