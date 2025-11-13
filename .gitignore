@@ -1,0 +1,24 @@
+# === Backend (Spring Boot) ===
+target/
+*.log
+*.class
+*.jar
+*.war
+*.iml
+
+# === Frontend (React / Vite) ===
+node_modules/
+dist/
+.env
+.vscode/
+
+# === OS / Editor ===
+.DS_Store
+Thumbs.db
+
+# === IntelliJ IDEA ===
+.idea/
+out/
+
+# === VS Code ===
+.history/
